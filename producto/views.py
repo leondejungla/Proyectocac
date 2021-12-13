@@ -1,3 +1,4 @@
+from django.http.response import JsonResponse
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from producto.forms import ProductoForm
@@ -38,3 +39,8 @@ def eliminar(request,id):
     producto = Producto.objects.get(id=id)
     producto.delete()
     return redirect('productos')
+
+def productosjson(request):
+    productos = Producto.objects.all().values()
+    productoList = list(productos)
+    return JsonResponse(productoList,safe=False)

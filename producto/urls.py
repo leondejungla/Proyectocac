@@ -7,6 +7,7 @@ urlpatterns = [
     path('', views.inicio,name='home'),
     path('nosotros', views.nosotros, name='nosotros'),
     path('productos', views.productos,name='productos'),
+    path('productosjson', views.productosjson,name='productosjson'),
     path('productos/crear', views.crear,name='crear'),
     path('productos/editar/<int:id>', views.editar, name='editar'),
     path('productos/eliminar/<int:id>',views.eliminar,name='eliminar')
